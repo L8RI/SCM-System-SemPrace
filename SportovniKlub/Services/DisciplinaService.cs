@@ -1,4 +1,5 @@
 ﻿using SportovniKlub.Interfaces;
+using SportovniKlub.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +8,11 @@ using System.Threading.Tasks;
 
 namespace SportovniKlub.Services
 {
-    internal interface DisciplinaService : ISportovniDisciplinaService
+    public class DisciplinaService : ISportovniDisciplinaService
     {
-
+        public SportovniDisciplina GetById(int disciplinaId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

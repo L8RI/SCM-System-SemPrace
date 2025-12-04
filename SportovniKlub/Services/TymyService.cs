@@ -11,26 +11,62 @@ namespace SportovniKlub.Services
 {
     public class TymyService : ITymyService
     {
-        private TymyRepository tymyHandler;
+        private readonly string _connectionString;
 
-        public TymyService(IDatabase db)
+        public TymyService(string connectionString)
         {
-            tymyHandler = new TymyRepository(db);
+            _connectionString = connectionString;
         }
 
         public List<Tym> GetAllTymy()
         {
-            return tymyHandler.ShowTymy();
+            using var uow = new OracleUnitOfWork(_connectionString);
+            var repo = new TymyRepository(uow);
+
+            try
+            {
+                var data = repo.ShowTymy();
+                uow.Commit();
+                return data;
+            } catch
+            {
+                uow.Rollback();
+                throw;
+            }
         }
 
         public void AddTym(Tym tym)
-        {            
-            tymyHandler.AddTym(tym);
+        {
+            using var uow = new OracleUnitOfWork(_connectionString);
+            var repo = new TymyRepository(uow);
+
+            try
+            {
+                repo.AddTym(tym);
+                uow.Commit(); 
+            }
+            catch
+            {
+                uow.Rollback();
+                throw;
+            }
         }
 
         public void DeleteTym(Tym tym)
         {
-            tymyHandler.DeleteTym(tym);
+            using var uow = new OracleUnitOfWork(_connectionString);
+            var repo = new TymyRepository(uow);
+
+            try
+            {
+                repo.DeleteTym(tym);
+                uow.Commit();
+            }
+            catch
+            {
+                uow.Rollback();
+                throw;
+            }
         }
     }
 }

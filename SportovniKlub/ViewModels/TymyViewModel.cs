@@ -39,7 +39,7 @@ namespace SportovniKlub.ViewModels
         private void LoadData()
         {
             var rows = TymyService.GetAllTymy();
-            Tymy.Clear();
+            Tymy.Clear();   
             foreach (var tym in rows)
             {
                 Tymy.Add(tym);

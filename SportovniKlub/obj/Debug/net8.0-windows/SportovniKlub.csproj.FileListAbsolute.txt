@@ -37,3 +37,4 @@ C:\Users\lori8\source\repos\SportovniKlub\SportovniKlub\obj\Debug\net8.0-windows
 C:\Users\lori8\source\repos\SportovniKlub\SportovniKlub\obj\Debug\net8.0-windows\Views\TymyWindow.baml
 C:\Users\lori8\source\repos\SportovniKlub\SportovniKlub\obj\Debug\net8.0-windows\Views\OsobyWindow.baml
 C:\Users\lori8\source\repos\SportovniKlub\SportovniKlub\obj\Debug\net8.0-windows\Views\OsobyWindow.g.cs
+C:\Users\lori8\source\repos\SportovniKlub\SportovniKlub\obj\Debug\net8.0-windows\SportovniKlub.sourcelink.json

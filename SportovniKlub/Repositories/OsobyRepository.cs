@@ -31,8 +31,6 @@ namespace SportovniKlub.Repositories
                     {
                         while (reader.Read())
                         {
-                            while (reader.Read())
-                            {
                                 char typ = reader.GetString(5)[0];
 
                                 Osoba osoba = typ switch
@@ -51,7 +49,6 @@ namespace SportovniKlub.Repositories
                                 osoba.SportovniDisciplinaId = reader.GetInt32(6);
 
                                 osoby.Add(osoba);
-                            }
                         }
                     }
                 }

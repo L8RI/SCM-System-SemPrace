@@ -11,129 +11,81 @@ namespace SportovniKlub.TablesHandlers
     {
         internal class TymyRepository
         {
-            private IDatabase _db;
+            private readonly IUnitOfWork _uow;
 
-            public TymyRepository(IDatabase db)
-            {
-                _db = db;
-            }
+                public TymyRepository(IUnitOfWork uow)
+                {
+                    _uow = uow;
+                }
 
             public List<Tym> ShowTymy()
             {
                 var tymy = new List<Tym>();
 
-                using (var connection = _db.GetConnection())
+                using var command = _uow.Connection.CreateCommand();
+                command.Transaction = _uow.Transaction;
+                command.CommandText = "SELECT * FROM TYMY";
+
+                using var reader = command.ExecuteReader();
+                while (reader.Read())
                 {
-                    using (var command = connection.CreateCommand())
-                    {
-                        command.CommandText = "SELECT * FROM TYMY";
+                    int? sponzorId = reader.IsDBNull(7) ? null : reader.GetInt32(7);
 
-                        using (var reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                int tymID = 0;
-                                string nazevTymu = string.Empty;
-                                int pocetHracu = 0;
-                                decimal plat = 0;
-                                int pocetTrofeju = 0;
-                                decimal vyseOdmen = 0;
-                                int sportovniDisciplinaID = 0;
-                                int? sponzorID = null;
-                                int trenerID = 0;
+                    var tym = new Tym(
+                    reader.GetInt32(0),
+                    reader.GetString(1),
+                    reader.GetInt32(2),
+                    reader.GetDecimal(3),
+                    reader.GetInt32(4),
+                    reader.GetDecimal(5),
+                    reader.GetInt32(6),
+                    sponzorId,
+                    reader.GetInt32(8)
+                    );
 
-                                for (int i = 0; i < reader.FieldCount; i++)
-                                {
-                                    if (reader.GetName(i) == "TYM_ID")
-                                    {
-                                        tymID = Convert.ToInt32(reader.GetValue(i));
-                                    }
-                                    else if (reader.GetName(i) == "NAZEV_TYMU")
-                                    {
-                                        nazevTymu = reader.GetValue(i).ToString();
-                                    }
-                                    else if (reader.GetName(i) == "POCET_HRACU")
-                                    {
-                                        pocetHracu = Convert.ToInt32(reader.GetValue(i));
-                                    }
-                                    else if (reader.GetName(i) == "PLAT")
-                                    {
-                                        plat = Convert.ToDecimal(reader.GetValue(i));
-                                    }
-                                    else if (reader.GetName(i) == "POCET_TROFEJU")
-                                    {
-                                        pocetTrofeju = Convert.ToInt32(reader.GetValue(i));
-                                    }
-                                    else if (reader.GetName(i) == "VYSE_ODMEN")
-                                    {
-                                        vyseOdmen = Convert.ToDecimal(reader.GetValue(i));
-                                    }
-                                    else if (reader.GetName(i) == "SPORTOVNI_DISCIPLINA_ID")
-                                    {
-                                        sportovniDisciplinaID = Convert.ToInt32(reader.GetValue(i));
-                                    }
-                                    else if (reader.GetName(i) == "SPONZOR_ID")
-                                    {
-                                        if (reader.GetValue(i) != DBNull.Value)
-                                            sponzorID = Convert.ToInt32(reader.GetValue(i));
-                                    }
-                                    else if (reader.GetName(i) == "TRENER_ID")
-                                    {
-                                        trenerID = Convert.ToInt32(reader.GetValue(i));
-                                    }
-                                }
-
-                                Tym tym = new Tym(tymID, nazevTymu, pocetHracu, plat, pocetTrofeju, vyseOdmen, sportovniDisciplinaID, sponzorID, trenerID);
-
-                                tymy.Add(tym);
-                            }
-                        }
-                    }
+                    tymy.Add(tym);
                 }
+
                 return tymy;
             }
 
             public void AddTym(Tym tym)
             {
-                using (var connection = _db.GetConnection())
-                {
-                    using (var command = connection.CreateCommand())
-                    {
-                        command.CommandText = @"INSERT INTO TYMY 
-                    (NAZEV_TYMU, POCET_HRACU, PLAT, POCET_TROFEJU, VYSE_ODMEN, SPORTOVNI_DISCIPLINA_ID, SPONZOR_ID, TRENER_ID)
-                    VALUES (:nazevTymu, :pocetHracu, :plat, :pocetTrofeju, :vyseOdmen, :sportovniDisciplinaID, :sponzorID, :trenerID)";
+                var command = _uow.Connection.CreateCommand();
+                command.Connection = _uow.Connection;
+                command.Transaction = _uow.Transaction;
 
-                        command.Parameters.Add(new OracleParameter("nazevTymu", tym.NazevTymu));
-                        command.Parameters.Add(new OracleParameter("pocetHracu", tym.PocetHracu));
-                        command.Parameters.Add(new OracleParameter("plat", tym.Plat));
-                        command.Parameters.Add(new OracleParameter("pocetTrofeju", tym.PocetTrofeju));
-                        command.Parameters.Add(new OracleParameter("vyseOdmen", tym.VyseOdmen));
-                        command.Parameters.Add(new OracleParameter("sportovniDisciplinaID", tym.SportovniDisciplinaID));
+                command.CommandText = @"INSERT INTO TYMY 
+                        (NAZEV_TYMU, POCET_HRACU, PLAT, POCET_TROFEJU, VYSE_ODMEN, SPORTOVNI_DISCIPLINA_ID, SPONZOR_ID, TRENER_ID)
+                        VALUES (:nazevTymu, :pocetHracu, :plat, :pocetTrofeju, :vyseOdmen, :sportovniDisciplinaID, :sponzorID, :trenerID)";
 
-                        if (tym.SponzorID.HasValue)
-                            command.Parameters.Add(new OracleParameter("sponzorID", tym.SponzorID.Value));
-                        else
-                            command.Parameters.Add(new OracleParameter("sponzorID", DBNull.Value));
+                command.Parameters.Add(new OracleParameter("nazevTymu", tym.NazevTymu));
+                command.Parameters.Add(new OracleParameter("pocetHracu", tym.PocetHracu));
+                command.Parameters.Add(new OracleParameter("plat", tym.Plat));
+                command.Parameters.Add(new OracleParameter("pocetTrofeju", tym.PocetTrofeju));
+                command.Parameters.Add(new OracleParameter("vyseOdmen", tym.VyseOdmen));
+                command.Parameters.Add(new OracleParameter("sportovniDisciplinaID", tym.SportovniDisciplinaID));
 
-                        command.Parameters.Add(new OracleParameter("trenerID", tym.TrenerID));
+                if (tym.SponzorID.HasValue)
+                    command.Parameters.Add(new OracleParameter("sponzorID", tym.SponzorID.Value));
+                else
+                    command.Parameters.Add(new OracleParameter("sponzorID", DBNull.Value));
 
-                        command.ExecuteNonQuery();
-                    }
-                }
+                command.Parameters.Add(new OracleParameter("trenerID", tym.TrenerID));
+
+                command.ExecuteNonQuery();
             }
 
             public void DeleteTym(Tym tym)
             {
-                using (var connection = _db.GetConnection())
-                {
-                    using (var command = connection.CreateCommand())
-                    {
-                        command.CommandText = "DELETE FROM TYMY WHERE TYM_ID = :tymID";
-                        command.Parameters.Add(new OracleParameter("tymID", tym.TymID));
+                var command = _uow.Connection.CreateCommand();
+                command.Connection = _uow.Connection;
+                command.Transaction = _uow.Transaction;
 
-                        command.ExecuteNonQuery();
-                    }
-                }
+                command.CommandText = "DELETE FROM TYMY WHERE TYM_ID = :tymID";
+                command.Parameters.Add(new OracleParameter("tymID", tym.TymID));
+
+                command.ExecuteNonQuery();
             }
         }
     }
