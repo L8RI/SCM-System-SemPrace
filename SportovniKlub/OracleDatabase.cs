@@ -17,17 +17,18 @@ namespace SportovniKlub
     {
         private readonly string connectionString;
 
-        public OracleDatabase()
-        {
-            connectionString = "User Id=st72491;Password=Znahar137273;" +
-            "Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=FEI-SQL3.UPCEUCEBNY.CZ)(PORT=1521))(CONNECT_DATA=(SID=BDAS)));";
-        }
+        //public OracleDatabase()
+        //{
+        //    connectionString = "User Id=st72491;Password=Znahar137273;" +
+        //    "Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=FEI-SQL3.UPCEUCEBNY.CZ)(PORT=1521))(CONNECT_DATA=(SID=BDAS)));";
+        //}
 
         public IDbConnection GetConnection()
         {
-            var connection = new OracleConnection(connectionString);
-            connection.Open(); // ?
-            return connection;
+            //var connection = new OracleConnection(connectionString);
+            //connection.Open(); // ?
+            //return connection;
+            throw new NotImplementedException();
         }
     }
 }

@@ -27,7 +27,7 @@ namespace SportovniKlub
             var db = new OracleDatabase(); 
 
             TymyService = new TymyService(connectionString);
-            TreninkyService = new TreninkyService(db);  
+            TreninkyService = new TreninkyService(connectionString);  
             OsobyService = new OsobyService(db);
         }
     }
