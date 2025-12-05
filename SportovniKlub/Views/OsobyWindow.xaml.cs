@@ -25,10 +25,10 @@ namespace SportovniKlub.Views
         public OsobyWindow()
         {
             InitializeComponent();
-            var app = (App)Application.Current;
-            osobyViewModels = new OsobyViewModels(app.OsobyService);
+            //var app = (App)Application.Current;
+            //osobyViewModels = new OsobyViewModels(app.OsobyService);
 
-            DataContext = osobyViewModels;
+            //DataContext = osobyViewModels;
         }
 
         private void AddOsobaButton_Click(object sender, RoutedEventArgs e)

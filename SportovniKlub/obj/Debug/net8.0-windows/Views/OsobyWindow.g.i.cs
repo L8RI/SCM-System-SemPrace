@@ -60,7 +60,7 @@ namespace SportovniKlub.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/SportovniKlub;V1.0.0.0;component/views/osobywindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/SportovniKlub;component/views/osobywindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\OsobyWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

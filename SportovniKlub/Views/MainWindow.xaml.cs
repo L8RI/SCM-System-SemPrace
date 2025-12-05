@@ -1,4 +1,5 @@
-﻿using Oracle.ManagedDataAccess.Client;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Oracle.ManagedDataAccess.Client;
 using SportovniKlub.ViewModels;
 using SportovniKlub.Views;
 using System.Text;
@@ -66,7 +67,8 @@ namespace SportovniKlub
         {
             try
             {
-                var window = new TreninkyWindow();
+                var serviceProvider = App.ServiceProvider;
+                var window = serviceProvider.GetRequiredService<TreninkyWindow>();
                 window.Show();
             }
             catch (OracleException ex)

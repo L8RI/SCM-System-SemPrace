@@ -38,3 +38,5 @@ C:\Users\lori8\source\repos\SportovniKlub\SportovniKlub\obj\Debug\net8.0-windows
 C:\Users\lori8\source\repos\SportovniKlub\SportovniKlub\obj\Debug\net8.0-windows\Views\OsobyWindow.baml
 C:\Users\lori8\source\repos\SportovniKlub\SportovniKlub\obj\Debug\net8.0-windows\Views\OsobyWindow.g.cs
 C:\Users\lori8\source\repos\SportovniKlub\SportovniKlub\obj\Debug\net8.0-windows\SportovniKlub.sourcelink.json
+C:\Users\lori8\source\repos\SportovniKlub\SportovniKlub\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\lori8\source\repos\SportovniKlub\SportovniKlub\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll

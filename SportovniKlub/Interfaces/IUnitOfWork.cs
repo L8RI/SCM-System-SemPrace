@@ -7,11 +7,14 @@ using System.Threading.Tasks;
 
 namespace SportovniKlub.Interfaces
 {
-    internal interface IUnitOfWork : IDisposable
+    public interface IUnitOfWork : IDisposable
     {
         IDbConnection Connection { get; }
         IDbTransaction Transaction { get; }
         void Commit();
         void Rollback();
+
+        TResult Execute<TResult>(Func<TResult> func);
+        void Execute(Action action);
     }
 }

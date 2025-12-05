@@ -43,5 +43,32 @@ namespace SportovniKlub
             Transaction?.Rollback();
             Dispose();
         }
+
+        public TResult Execute<TResult>(Func<TResult> func)
+        {
+            try
+            {
+                var result = func();
+                Commit();
+                return result;
+            } catch
+            {
+                Rollback();
+                throw;
+            }
+        }
+
+        public void Execute(Action action)
+        {
+            try
+            {
+                action();
+                Commit();
+            } catch
+            {
+                Rollback();
+                throw;
+            }
+        }
     }
 }

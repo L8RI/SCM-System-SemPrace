@@ -9,6 +9,6 @@ namespace SportovniKlub.Interfaces
 {
     public interface IDatabase
     {
-        IDbConnection GetConnection();
+        //IDbConnection GetConnection();
     }
 }

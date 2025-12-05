@@ -28,10 +28,10 @@ namespace SportovniKlub
         public TymyWindow()
         {
             InitializeComponent();
-            var app = (App)Application.Current;
-            viewModel = new TymyViewModel(app.TymyService);
+            //var app = (App)Application.Current;
+            //viewModel = new TymyViewModel(app.TymyService);
 
-            DataContext = viewModel;
+            //DataContext = viewModel;
         }
 
         private void AddTymButton_Click(object sender, RoutedEventArgs e)

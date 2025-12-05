@@ -8,18 +8,39 @@ namespace SportovniKlub.Repositories
 {
     internal class SportovniDisciplinyRepository
     {
-        private readonly IDatabase db;
+        private readonly IUnitOfWork _uow;
 
-        public SportovniDisciplinyRepository(IDatabase db)
+        public SportovniDisciplinyRepository(IUnitOfWork uow)
         {
-            this.db = db;
+            _uow = uow;
+        }
+
+        public SportovniDisciplina GetById(int id)
+        {
+            var command = _uow.Connection.CreateCommand();
+            command.Transaction = _uow.Transaction;
+            command.CommandText = "SELECT SPORTOVNI_DISCIPLINA_ID, NAZEV " +
+                "FROM SPORTOVNI_DISCIPLINA WHERE SPORTOVNI_DISCIPLINA_ID = :id";
+
+            command.Parameters.Add(new OracleParameter("id", id));
+
+            using var reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                int disciplinaId = reader.GetInt32(0);
+                string nazev = reader.GetString(1);
+
+                return new SportovniDisciplina(disciplinaId, nazev);
+            }
+                
+            return null;
         }
 
         public List<SportovniDisciplina> GetAllDiscipline()
         {
             var disciplines = new List<SportovniDisciplina>();
 
-            using (var connection = db.GetConnection())
+            using var connection = _uow.Connection;
             using (var command = connection.CreateCommand())
             {
                 command.CommandText = "SELECT SPORTOVNI_DISCIPLINA_ID, NAZEV FROM SPORTOVNI_DISCIPLINA";

@@ -11,11 +11,11 @@ using System.Threading.Tasks;
 
 namespace SportovniKlub.ViewModels
 {
-    internal class TreninkyViewModel
+    public class TreninkyViewModel
     {
         public ObservableCollection<Trenink> Treninky { get; set; }
 
-        public ITreninkyService TreninkyService { get; set; }
+        public ITreninkyService TreninkyService;
 
         public RelayCommand AddTreninkCommand { get; set; }
         public RelayCommand DeleteTreninkCommand { get; set; }

@@ -22,14 +22,12 @@ namespace SportovniKlub
     /// </summary>
     public partial class TreninkyWindow : Window
     {
-        TreninkyViewModel viewModel;
+        TreninkyViewModel _viewModel;
 
-        public TreninkyWindow()
+        public TreninkyWindow(TreninkyViewModel viewModel)
         {
             InitializeComponent();
-            var app = (App)Application.Current;
-            viewModel = new TreninkyViewModel(app.TreninkyService);
-
+            _viewModel = viewModel;
             DataContext = viewModel;
         }
 
@@ -59,7 +57,7 @@ namespace SportovniKlub
                     return;
                 }
 
-                viewModel.DeleteTreninkCommand.Execute(selectedTrenink);
+                _viewModel.DeleteTreninkCommand.Execute(selectedTrenink);
             }
             catch (OracleException ex)
             {

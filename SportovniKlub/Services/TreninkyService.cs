@@ -1,4 +1,5 @@
 ﻿using Oracle.ManagedDataAccess.Client;
+using SportovniKlub.Converters;
 using SportovniKlub.Interfaces;
 using SportovniKlub.Models;
 using SportovniKlub.TablesHandlers;
@@ -13,63 +14,32 @@ namespace SportovniKlub.Services
 {
     public class TreninkyService : ITreninkyService
     {
-        //private TreninkyRepository treninkyHandler;
-        private readonly string _connectionString;
+        private readonly IUnitOfWork _uow;
+        private readonly TreninkyRepository _repo;
+        private readonly TreninkMapper _mapper;
+        private readonly ISportovniDisciplinaService _discService;
 
-        public TreninkyService(string connectionString)
+        public TreninkyService(IUnitOfWork uow, TreninkyRepository repo, TreninkMapper mapper, ISportovniDisciplinaService discService)
         {
-            _connectionString = connectionString;
+            _uow = uow;
+            _repo = repo;
+            _mapper = mapper;
+            _discService = discService;
         }
 
         public List<Trenink> GetAllTreninky()
         {
-            using var uow = new OracleUnitOfWork(_connectionString);
-            var repo = new TreninkyRepository(uow);
-
-            try
-            {
-                var data = repo.ShowTreninky();
-                uow.Commit();
-                return data;
-            } catch
-            {
-                uow.Rollback();
-                throw;
-            }
+            return _uow.Execute(() => _repo.ShowTreninky());
         }
 
         public void AddTrenink(Trenink trenink)
         {
-            using var uow = new OracleUnitOfWork(_connectionString);
-            var repo = new TreninkyRepository(uow);
-
-            try
-            {
-                repo.AddTrenink(trenink);
-                uow.Commit();
-            }
-            catch
-            {
-                uow.Rollback();
-                throw;
-            }
+            _uow.Execute(() => _repo.AddTrenink(trenink));
         }
 
         public void DeleteTrenink(Trenink trenink)
         {
-            using var uow = new OracleUnitOfWork(_connectionString);
-            var repo = new TreninkyRepository(uow);
-
-            try
-            {
-                repo.DeleteTrenink(trenink);
-                uow.Commit();
-            }
-            catch
-            {
-                uow.Rollback();
-                throw;
-            }
+            _uow.Execute(() => _repo.DeleteTrenink(trenink));
         }
     }
 }

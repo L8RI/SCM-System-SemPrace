@@ -1,5 +1,6 @@
 ﻿using SportovniKlub.Interfaces;
 using SportovniKlub.Models;
+using SportovniKlub.ModelsDTO;
 using SportovniKlub.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -11,32 +12,30 @@ using System.Windows.Data;
 
 namespace SportovniKlub.Converters
 {
-    public class TreninkMapper : ITreninkMapper
+    public class TreninkMapper
     {
-        private readonly ISportovniDisciplinaService disciplinaService;
-
-        public TreninkMapper(ISportovniDisciplinaService disciplinaService)
+        public TreninkDTO ToDTO(Trenink trenink)
         {
-            this.disciplinaService = disciplinaService;
+            return new TreninkDTO
+            {
+                TreninkID = trenink.TreninkID,
+                TrenerID = trenink.TrenerID,
+                Datum = trenink.Datum,
+                Disciplina = trenink.SportDisciplina?.Nazev ?? "",
+                TypTreninkuID = trenink.TypTreninkuID
+            };
         }
 
-        public Trenink FromDb(int treninkId, int trenerId, DateTime datum,
-                              int disciplinaId, int typTreninkuId)
+        public Trenink ToEntity(TreninkDTO dto, SportovniDisciplina disciplina)
         {
-            var disciplina = disciplinaService.GetById(disciplinaId);
-
             return new Trenink(
-                treninkId,
-                trenerId,
-                datum,
+                dto.TreninkID,
+                dto.TrenerID,
+                dto.Datum,
                 disciplina,
-                typTreninkuId
+                dto.TypTreninkuID
             );
         }
-
-        public int ToDisciplinaId(SportovniDisciplina disciplina)
-        {
-            return disciplina.SportovniDisciplinaId;
-        }
     }
+
 }

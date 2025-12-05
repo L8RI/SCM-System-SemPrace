@@ -32,7 +32,7 @@
                 <DataGridTextColumn Header="ID Tréninku" Binding="{Binding TreninkID}" Width="*"/>
                 <DataGridTextColumn Header="ID Trenéra" Binding="{Binding TrenerID}" Width="*"/>
                 <DataGridTextColumn Header="Datum" Binding="{Binding Datum, StringFormat=d}" Width="*"/>
-                <DataGridTextColumn Header="Sportovní disciplína" Binding="{Binding SportDisciplinaID}" Width="*"/>
+                <DataGridTextColumn Header="Sportovní disciplína" Binding="{Binding SportDisciplina}" Width="*"/>
                 <DataGridTextColumn Header="Typ tréninku" Binding="{Binding TypTreninkuID}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>

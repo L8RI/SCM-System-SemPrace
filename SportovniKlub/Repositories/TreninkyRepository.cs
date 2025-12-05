@@ -10,46 +10,44 @@ using System.Threading.Tasks;
 
 namespace SportovniKlub.TablesHandlers
 {
-    internal class TreninkyRepository
+    public class TreninkyRepository
     {
         private readonly IUnitOfWork _uow;
-        private ITreninkMapper _mapper;
+        private readonly ITreninkMapper _mapper;
 
-        public TreninkyRepository(IUnitOfWork uow)
+        public TreninkyRepository(IUnitOfWork uow, ITreninkMapper mapper)
         {
             _uow = uow;
-            //_mapper = mapper;
+            _mapper = mapper;
         }
 
         public List<Trenink> ShowTreninky()
         {
             var treninky = new List<Trenink>();
 
-            var connection = _uow.Connection;
-            using var command = connection.CreateCommand();
-            command.Transaction = connection.BeginTransaction();
+            using var command = _uow.Connection.CreateCommand();
+            command.Transaction = _uow.Transaction;
             command.CommandText = "SELECT * FROM TRENINKY";
 
-            using (var reader = command.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    int treninkID = 0;
-                    int trenerID = 0;
-                    DateTime datum = new DateTime();
-                    int sportDisciplinaID = 0;
-                    int typTreninkuID = 0;
+            using var reader = command.ExecuteReader();
 
-                    var trenink = _mapper.FromDb(
+            while (reader.Read())
+            {
+                int treninkID = reader.GetInt32(reader.GetOrdinal("TRENINK_ID"));
+                int trenerID = reader.GetInt32(reader.GetOrdinal("TRENER_ID"));
+                DateTime datum = reader.GetDateTime(reader.GetOrdinal("DATUM"));
+                int disciplina = reader.GetInt32(reader.GetOrdinal("SPORTOVNI_DISCIPLINA_ID"));
+                int typ = reader.GetInt32(reader.GetOrdinal("TYP_TRENINKU_ID"));
+
+                treninky.Add(
+                    _mapper.FromDb(
                         treninkID,
                         trenerID,
                         datum,
-                        sportDisciplinaID,
-                        typTreninkuID
-                    );
-
-                    treninky.Add(trenink);
-                }
+                        disciplina,
+                        typ
+                    )
+                );
             }
 
             return treninky;
@@ -60,12 +58,13 @@ namespace SportovniKlub.TablesHandlers
             using var command = _uow.Connection.CreateCommand();
             command.Transaction = _uow.Transaction;
 
-            command.CommandText = @"INSERT INTO TRENINKY (TRENER_ID, DATUM, SPORTOVNI_DISCIPLINA_ID, TYP_TRENINKU_ID) " +
-                      $"VALUES (:trenerId, :datum, :disciplinaId, :typTreninkuId)";
+            command.CommandText =
+                @"INSERT INTO TRENINKY (TRENER_ID, DATUM, SPORTOVNI_DISCIPLINA_ID, TYP_TRENINKU_ID)
+              VALUES (:trenerId, :datum, :disciplinaId, :typTreninkuId)";
 
             command.Parameters.Add(new OracleParameter("trenerId", trenink.TrenerID));
             command.Parameters.Add(new OracleParameter("datum", trenink.Datum));
-            command.Parameters.Add(new OracleParameter("disciplinaId", trenink.SportDisciplina));
+            command.Parameters.Add(new OracleParameter("disciplinaId", trenink.SportDisciplina.SportovniDisciplinaId));
             command.Parameters.Add(new OracleParameter("typTreninkuId", trenink.TypTreninkuID));
 
             command.ExecuteNonQuery();
@@ -76,9 +75,10 @@ namespace SportovniKlub.TablesHandlers
             using var command = _uow.Connection.CreateCommand();
             command.Transaction = _uow.Transaction;
 
-            command.CommandText = $"DELETE FROM TRENINKY WHERE TRENINK_ID = :treninkId";
+            command.CommandText =
+                @"DELETE FROM TRENINKY WHERE TRENINK_ID = :id";
 
-            command.Parameters.Add(new OracleParameter("treninkId", trenink.TreninkID));
+            command.Parameters.Add(new OracleParameter("id", trenink.TreninkID));
 
             command.ExecuteNonQuery();
         }

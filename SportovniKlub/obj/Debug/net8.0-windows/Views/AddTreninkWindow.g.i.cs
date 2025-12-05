@@ -100,7 +100,7 @@ namespace SportovniKlub {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/SportovniKlub;V1.0.0.0;component/views/addtreninkwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/SportovniKlub;component/views/addtreninkwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\AddTreninkWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
