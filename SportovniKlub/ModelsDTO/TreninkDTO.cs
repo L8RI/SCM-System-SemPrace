@@ -13,7 +13,14 @@ namespace SportovniKlub.ModelsDTO
         public DateTime Datum { get; set; }
         public string Disciplina { get; set; }     
         public int TypTreninkuID { get; set; }
+
+        //public TreninkDTO(int treninkID, int trenerID, DateTime datum, string disciplina, int typTreninkuID)
+        //{
+        //    TreninkID = treninkID;
+        //    TrenerID = trenerID;
+        //    Datum = datum;
+        //    Disciplina = disciplina;
+        //    TypTreninkuID = typTreninkuID;
+        //}
     }
-
-
 }

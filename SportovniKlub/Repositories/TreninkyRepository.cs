@@ -1,5 +1,4 @@
 ﻿using Oracle.ManagedDataAccess.Client;
-using SportovniKlub.Converters;
 using SportovniKlub.Interfaces;
 using SportovniKlub.Models;
 using System;
@@ -8,20 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SportovniKlub.TablesHandlers
+namespace SportovniKlub.Repositories
 {
     public class TreninkyRepository
     {
         private readonly IUnitOfWork _uow;
-        private readonly ITreninkMapper _mapper;
 
-        public TreninkyRepository(IUnitOfWork uow, ITreninkMapper mapper)
+        public TreninkyRepository(IUnitOfWork uow)
         {
             _uow = uow;
-            _mapper = mapper;
         }
 
-        public List<Trenink> ShowTreninky()
+        public async Task<List<Trenink>> ShowTreninky()
         {
             var treninky = new List<Trenink>();
 
@@ -36,21 +33,21 @@ namespace SportovniKlub.TablesHandlers
                 int treninkID = reader.GetInt32(reader.GetOrdinal("TRENINK_ID"));
                 int trenerID = reader.GetInt32(reader.GetOrdinal("TRENER_ID"));
                 DateTime datum = reader.GetDateTime(reader.GetOrdinal("DATUM"));
-                int disciplina = reader.GetInt32(reader.GetOrdinal("SPORTOVNI_DISCIPLINA_ID"));
+                int disciplinaId = reader.GetInt32(reader.GetOrdinal("SPORTOVNI_DISCIPLINA_ID"));
                 int typ = reader.GetInt32(reader.GetOrdinal("TYP_TRENINKU_ID"));
 
-                treninky.Add(
-                    _mapper.FromDb(
+                treninky.Add(new Trenink(
                         treninkID,
                         trenerID,
                         datum,
-                        disciplina,
+                        disciplinaId,
                         typ
-                    )
+                        )
                 );
             }
 
-            return treninky;
+            //return await treninky.ToListAsync();
+            return null;
         }
 
         public void AddTrenink(Trenink trenink)
@@ -64,7 +61,7 @@ namespace SportovniKlub.TablesHandlers
 
             command.Parameters.Add(new OracleParameter("trenerId", trenink.TrenerID));
             command.Parameters.Add(new OracleParameter("datum", trenink.Datum));
-            command.Parameters.Add(new OracleParameter("disciplinaId", trenink.SportDisciplina.SportovniDisciplinaId));
+            command.Parameters.Add(new OracleParameter("disciplinaId", trenink.SportDisciplinaId));
             command.Parameters.Add(new OracleParameter("typTreninkuId", trenink.TypTreninkuID));
 
             command.ExecuteNonQuery();

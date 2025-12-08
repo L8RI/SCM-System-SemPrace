@@ -1,8 +1,8 @@
 ﻿using Oracle.ManagedDataAccess.Client;
-using SportovniKlub.Converters;
 using SportovniKlub.Interfaces;
 using SportovniKlub.Models;
-using SportovniKlub.TablesHandlers;
+using SportovniKlub.ModelsDTO;
+using SportovniKlub.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,21 +16,32 @@ namespace SportovniKlub.Services
     {
         private readonly IUnitOfWork _uow;
         private readonly TreninkyRepository _repo;
-        private readonly TreninkMapper _mapper;
-        private readonly ISportovniDisciplinaService _discService;
+        private readonly SportovniDisciplinyRepository _disciplinaRepo;
+        private readonly ITreninkMapper _treninkMapper;
 
-        public TreninkyService(IUnitOfWork uow, TreninkyRepository repo, TreninkMapper mapper, ISportovniDisciplinaService discService)
+        public TreninkyService(IUnitOfWork uow, TreninkyRepository repo, ITreninkMapper treninkMapper, SportovniDisciplinyRepository disciplinaRepo)
         {
             _uow = uow;
             _repo = repo;
-            _mapper = mapper;
-            _discService = discService;
+            _treninkMapper = treninkMapper;
+            _disciplinaRepo = disciplinaRepo;
         }
 
-        public List<Trenink> GetAllTreninky()
+        public List<TreninkDTO> GetAllTreninky()
         {
-            return _uow.Execute(() => _repo.ShowTreninky());
+            var treninky = _repo.ShowTreninky();
+            var discipliny = _disciplinaRepo.GetAllDiscipline().ToDictionary(d => d.SportovniDisciplinaId);
+
+            //foreach (var t in treninky)
+            //{
+            //    if (discipliny.TryGetValue(t.SportDisciplinaId, out var d))
+            //        t.SportDisciplina = d;
+            //}
+
+            //return treninky.Select(t => _treninkMapper.ToDTO(t)).ToList();
+            return null;
         }
+
 
         public void AddTrenink(Trenink trenink)
         {

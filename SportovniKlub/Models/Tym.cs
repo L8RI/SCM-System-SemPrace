@@ -14,11 +14,14 @@ namespace SportovniKlub.Models
         public decimal Plat { get; set; }
         public int PocetTrofeju { get; set; }
         public decimal VyseOdmen { get; set; }
-        public int SportovniDisciplinaID { get; set; }
-        public int? SponzorID { get; set; }
-        public int TrenerID { get; set; }
+        public SportovniDisciplina SportovniDisciplina { get; set; }
+        public Sponzor? Sponzor { get; set; }
+        public Trener Trener { get; set; }
+        public int SportovniDisciplinaId {  get; set; }
+        public int? SponzorId { get; set; }
+        public int TrenerId { get; set; }
 
-        public Tym(int tymID, string nazevTymu, int pocetHracu, decimal plat, int pocetTrofeju, decimal vyseOdmen, int sportovniDisciplinaID, int? sponzorID, int trenerID)
+        public Tym(int tymID, string nazevTymu, int pocetHracu, decimal plat, int pocetTrofeju, decimal vyseOdmen, int sportovniDisciplinaId, int? sponzorId, int trenerId)
         {
             TymID = tymID;
             NazevTymu = nazevTymu;
@@ -26,9 +29,22 @@ namespace SportovniKlub.Models
             Plat = plat;
             PocetTrofeju = pocetTrofeju;
             VyseOdmen = vyseOdmen;
-            SportovniDisciplinaID = sportovniDisciplinaID;
-            SponzorID = sponzorID;
-            TrenerID = trenerID;
+            SportovniDisciplinaId = sportovniDisciplinaId;
+            SponzorId = sponzorId;
+            TrenerId = trenerId;
+        }
+
+        public Tym(int tymID, string nazevTymu, int pocetHracu, decimal plat, int pocetTrofeju, decimal vyseOdmen, SportovniDisciplina sportovniDisciplina, Sponzor? sponzor, Trener trener)
+        {
+            TymID = tymID;
+            NazevTymu = nazevTymu;
+            PocetHracu = pocetHracu;
+            Plat = plat;
+            PocetTrofeju = pocetTrofeju;
+            VyseOdmen = vyseOdmen;
+            SportovniDisciplina = sportovniDisciplina;
+            Sponzor = sponzor;
+            Trener = trener;
         }
     }
 }

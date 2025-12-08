@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SportovniKlub.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,14 +20,17 @@ namespace SportovniKlub
     /// </summary>
     public partial class AddTreninkWindow : Window
     {
-        public AddTreninkWindow()
+        public AddTreninkWindow(AddTreninkViewModel viewModel)
         {
             InitializeComponent();
+            DataContext = viewModel;
+
+            viewModel.CloseAction = new Action(() => this.Close());
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+           this.Close();
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)

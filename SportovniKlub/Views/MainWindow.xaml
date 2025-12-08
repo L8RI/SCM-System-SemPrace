@@ -33,14 +33,14 @@
 
 
             <Button Width="220" Height="60"
+                    Command="{Binding OpenTreninkyCommand}"
                     Background="#FF3F51B5"
                     Foreground="White"
                     FontWeight="SemiBold"
                     FontSize="16"
                     BorderThickness="0"
                     Cursor="Hand"
-                    Margin="0, 0, 0, 15"
-                    Click="Show_Treninky_Button_Click">
+                    Margin="0, 0, 0, 15">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="40"/>

@@ -13,11 +13,17 @@ namespace SportovniKlub.Models
 {
     public class Trener : Osoba
     {
-        int TrenerId { get; set; }
-        int Zkusenot { get; set; }
-        public Trener() 
+        public int TrenerId { get; set; }
+        public int Zkusenost { get; set; }
+
+
+
+        public Trener(int trenerId, string jmeno, string prijmeni, int zkusenost)
         {
-            TypOsoby = 'T';
+            TrenerId = trenerId;
+            Jmeno = jmeno;
+            Prijmeni = prijmeni;
+            Zkusenost = zkusenost;
         }
     }
 }

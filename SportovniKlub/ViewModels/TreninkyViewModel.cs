@@ -1,5 +1,6 @@
 ﻿using SportovniKlub.Interfaces;
 using SportovniKlub.Models;
+using SportovniKlub.ModelsDTO;
 using SportovniKlub.Services;
 using System;
 using System.Collections.Generic;
@@ -8,47 +9,73 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace SportovniKlub.ViewModels
 {
     public class TreninkyViewModel
     {
-        public ObservableCollection<Trenink> Treninky { get; set; }
+        public ObservableCollection<TreninkDTO> Treninky { get; set; }
 
-        public ITreninkyService TreninkyService;
+        private readonly ITreninkyService _treninkyService;
 
-        public RelayCommand AddTreninkCommand { get; set; }
-        public RelayCommand DeleteTreninkCommand { get; set; }
+        private readonly IMessageService _messageService;
 
-        public TreninkyViewModel(ITreninkyService treninkyService)
+        public INavigationService NavigationService;
+        //public ObservableCollection<SportovniDisciplina> SportovniDiscipliny { get; set; }
+        //public SportovniDisciplina VybranaDisciplina { get; set; }
+        //public ObservableCollection<Trener> Treneri { get; set; }
+        //public Trener VybranyTrener { get; set; }
+        //public ObservableCollection<TypTreninku> TypyTreninku { get; set; }
+        //public TypTreninku VybranyTypTreninku { get; set; }
+
+        //public RelayCommand AddTreninkCommand { get; set; }
+        //public RelayCommand DeleteTreninkCommand { get; set; }
+        public RelayCommand ShowAddTreninkWindowCommand { get; }
+
+        public TreninkyViewModel(ITreninkyService treninkyService, INavigationService navigationService, IMessageService messageService)
         {
-            TreninkyService = treninkyService;
-            Treninky = new ObservableCollection<Trenink>();
+            _treninkyService = treninkyService;
+            NavigationService = navigationService;
+            _messageService = messageService;
+            Treninky = new ObservableCollection<TreninkDTO>();
+            //SportovniDiscipliny = new ObservableCollection<SportovniDisciplina>(sportovniDisciplinaService.GetAllDiscipliny());
+            //Treneri = new ObservableCollection<Trener>(treneriService.GetAllTreneri());
+            //TypyTreninku = new ObservableCollection<TypTreninku>(typyTreninkuService.GetAllTypyTreninku());
 
-            AddTreninkCommand = new RelayCommand(trenink =>
+            //AddTreninkCommand = new RelayCommand(trenink =>
+            //{
+            //    TreninkyService.AddTrenink((Trenink)trenink);
+            //    LoadData();
+            //});
+
+            //DeleteTreninkCommand = new RelayCommand(trenink =>
+            //{
+            //    TreninkyService.DeleteTrenink((Trenink)trenink);
+            //    LoadData();
+            //});
+
+            ShowAddTreninkWindowCommand = new RelayCommand(trenink =>
             {
-                TreninkyService.AddTrenink((Trenink)trenink);
-                LoadData();
+                NavigationService.ShowAddTreninkWindow();
             });
 
-            DeleteTreninkCommand = new RelayCommand(trenink =>
-            {
-                TreninkyService.DeleteTrenink((Trenink)trenink);
-                LoadData();
-            });
-
-            LoadData();
+            //LoadData();
         }
 
-        private void LoadData()
+        public async Task InitializeAsync()
         {
-            Treninky.Clear();
-            var rows = TreninkyService.GetAllTreninky();
-            //Treninky.Clear();
-            foreach (var row in rows)
-            {
-                Treninky.Add(row);
-            }
+            //var data = await _treninkyService.GEtA
         }
+
+        //private void LoadData()
+        //{
+        //    Treninky.Clear();
+        //    var rows = TreninkyService.GetAllTreninky();
+        //    foreach (var row in rows)
+        //    {
+        //        Treninky.Add(row);
+        //    }
+        //}
     }
 }

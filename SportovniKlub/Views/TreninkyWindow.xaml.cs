@@ -1,4 +1,5 @@
-﻿using Oracle.ManagedDataAccess.Client;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Oracle.ManagedDataAccess.Client;
 using SportovniKlub.Models;
 using SportovniKlub.ViewModels;
 using System;
@@ -22,13 +23,9 @@ namespace SportovniKlub
     /// </summary>
     public partial class TreninkyWindow : Window
     {
-        TreninkyViewModel _viewModel;
-
-        public TreninkyWindow(TreninkyViewModel viewModel)
+        public TreninkyWindow()
         {
             InitializeComponent();
-            _viewModel = viewModel;
-            DataContext = viewModel;
         }
 
         private void AddTreninkButton_Click(object sender, RoutedEventArgs e)
@@ -47,23 +44,21 @@ namespace SportovniKlub
 
         private void DeleteTreninkButton_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                Trenink selectedTrenink = treninkyGrid.SelectedItem as Trenink;
+            //try
+            //{
+            //    if (treninkyGrid.SelectedItem is not Trenink selectedTrenink)
+            //    {
+            //        MessageBox.Show("Vyberte trenink, který chcete smazat.");
+            //        return;
+            //    }
 
-                if (selectedTrenink == null)
-                {
-                    MessageBox.Show("Vyberte trenink, který chcete smazat.");
-                    return;
-                }
-
-                _viewModel.DeleteTreninkCommand.Execute(selectedTrenink);
-            }
-            catch (OracleException ex)
-            {
-                Clipboard.SetText(ex.Message);
-                MessageBox.Show(ex.Message);
-            }
+            //    _viewModel.DeleteTreninkCommand.Execute(selectedTrenink);
+            //}
+            //catch (OracleException ex)
+            //{
+            //    Clipboard.SetText(ex.Message);
+            //    MessageBox.Show(ex.Message);
+            //}
         }
 
         private void SaveTreninkButton_Click(object sender, RoutedEventArgs e)

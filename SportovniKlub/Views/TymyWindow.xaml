@@ -34,9 +34,9 @@
                 <DataGridTextColumn Header="Plat" Binding="{Binding Plat}" Width="*" />
                 <DataGridTextColumn Header="Počet trofejí" Binding="{Binding PocetTrofeju}" Width="*" />
                 <DataGridTextColumn Header="Výše odměn" Binding="{Binding VyseOdmen}" Width="*" />
-                <DataGridTextColumn Header="Sportovní disciplína ID" Binding="{Binding SportovniDisciplinaID}" Width="*" />
-                <DataGridTextColumn Header="Sponzor ID" Binding="{Binding SponzorID}" Width="*" />
-                <DataGridTextColumn Header="Trenér ID" Binding="{Binding TrenerID}" Width="*" />
+                <DataGridTextColumn Header="Sportovní disciplína" Binding="{Binding SportovniDisciplinaNazev}" Width="*" />
+                <DataGridTextColumn Header="Sponzor" Binding="{Binding SponzorNazev}" Width="*" />
+                <DataGridTextColumn Header="Trenér" Binding="{Binding TrenerPrijmeni}" Width="*" />
             </DataGrid.Columns>
         </DataGrid>
 

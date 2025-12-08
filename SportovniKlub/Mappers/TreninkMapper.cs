@@ -10,9 +10,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
 
-namespace SportovniKlub.Converters
+namespace SportovniKlub.Mappers
 {
-    public class TreninkMapper
+    public class TreninkMapper : ITreninkMapper
     {
         public TreninkDTO ToDTO(Trenink trenink)
         {
@@ -21,7 +21,7 @@ namespace SportovniKlub.Converters
                 TreninkID = trenink.TreninkID,
                 TrenerID = trenink.TrenerID,
                 Datum = trenink.Datum,
-                Disciplina = trenink.SportDisciplina?.Nazev ?? "",
+                Disciplina = trenink.SportDisciplina?.Nazev ?? "Chyba",
                 TypTreninkuID = trenink.TypTreninkuID
             };
         }

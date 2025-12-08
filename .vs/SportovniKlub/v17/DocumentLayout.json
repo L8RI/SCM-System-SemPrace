@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|c:\\users\\lori8\\source\\repos\\sportovniklub\\sportovniklub\\viewmodels\\treninkyviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|solutionrelative:sportovniklub\\viewmodels\\treninkyviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|c:\\users\\lori8\\source\\repos\\sportovniklub\\sportovniklub\\oracleunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|solutionrelative:sportovniklub\\oracleunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|c:\\users\\lori8\\source\\repos\\sportovniklub\\sportovniklub\\repositories\\treninkyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|solutionrelative:sportovniklub\\repositories\\treninkyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|c:\\users\\lori8\\source\\repos\\sportovniklub\\sportovniklub\\views\\treninkywindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,8 +19,36 @@
       "RelativeMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|solutionrelative:sportovniklub\\services\\treninkyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|c:\\users\\lori8\\source\\repos\\sportovniklub\\sportovniklub\\repositories\\treninkyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|solutionrelative:sportovniklub\\repositories\\treninkyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|c:\\users\\lori8\\source\\repos\\sportovniklub\\sportovniklub\\viewmodels\\treninkyviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|solutionrelative:sportovniklub\\viewmodels\\treninkyviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|c:\\users\\lori8\\source\\repos\\sportovniklub\\sportovniklub\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|solutionrelative:sportovniklub\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|c:\\users\\lori8\\source\\repos\\sportovniklub\\sportovniklub\\navigationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|solutionrelative:sportovniklub\\navigationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|c:\\users\\lori8\\source\\repos\\sportovniklub\\sportovniklub\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|solutionrelative:sportovniklub\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|c:\\users\\lori8\\source\\repos\\sportovniklub\\sportovniklub\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|solutionrelative:sportovniklub\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|c:\\users\\lori8\\source\\repos\\sportovniklub\\sportovniklub\\viewmodels\\addtreninkviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|solutionrelative:sportovniklub\\viewmodels\\addtreninkviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|c:\\users\\lori8\\source\\repos\\sportovniklub\\sportovniklub\\interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|solutionrelative:sportovniklub\\interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|c:\\users\\lori8\\source\\repos\\sportovniklub\\sportovniklub\\models\\trenink.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|solutionrelative:sportovniklub\\models\\trenink.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|c:\\users\\lori8\\source\\repos\\sportovniklub\\sportovniklub\\mappers\\treninkmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,38 +57,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|c:\\users\\lori8\\source\\repos\\sportovniklub\\sportovniklub\\modelsdto\\treninkdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|solutionrelative:sportovniklub\\modelsdto\\treninkdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|c:\\users\\lori8\\source\\repos\\sportovniklub\\sportovniklub\\interfaces\\itreninkmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|solutionrelative:sportovniklub\\interfaces\\itreninkmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|c:\\users\\lori8\\source\\repos\\sportovniklub\\sportovniklub\\views\\treninkywindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|solutionrelative:sportovniklub\\views\\treninkywindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|c:\\users\\lori8\\source\\repos\\sportovniklub\\sportovniklub\\views\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|solutionrelative:sportovniklub\\views\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|c:\\users\\lori8\\source\\repos\\sportovniklub\\sportovniklub\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|solutionrelative:sportovniklub\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|c:\\users\\lori8\\source\\repos\\sportovniklub\\sportovniklub\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|solutionrelative:sportovniklub\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|c:\\users\\lori8\\source\\repos\\sportovniklub\\sportovniklub\\models\\trenink.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|solutionrelative:sportovniklub\\models\\trenink.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|c:\\users\\lori8\\source\\repos\\sportovniklub\\sportovniklub\\oracleunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|solutionrelative:sportovniklub\\oracleunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|c:\\users\\lori8\\source\\repos\\sportovniklub\\sportovniklub\\repositories\\sportovnidisciplinyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E76F8C9A-41C7-49EC-ABD8-22A5E04768C1}|SportovniKlub\\SportovniKlub.csproj|solutionrelative:sportovniklub\\repositories\\sportovnidisciplinyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,8 +66,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 22,
+          "SelectedChildIndex": 17,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TreninkyWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\Views\\TreninkyWindow.xaml.cs",
+              "RelativeDocumentMoniker": "SportovniKlub\\Views\\TreninkyWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\Views\\TreninkyWindow.xaml.cs",
+              "RelativeToolTip": "SportovniKlub\\Views\\TreninkyWindow.xaml.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAAABsAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T23:04:11.482Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TreninkyService.cs",
+              "DocumentMoniker": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\Services\\TreninkyService.cs",
+              "RelativeDocumentMoniker": "SportovniKlub\\Services\\TreninkyService.cs",
+              "ToolTip": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\Services\\TreninkyService.cs",
+              "RelativeToolTip": "SportovniKlub\\Services\\TreninkyService.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAMwCYAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T17:46:28.368Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
@@ -106,131 +132,144 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\Views\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "SportovniKlub\\Views\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\Views\\MainWindow.xaml.cs",
-              "RelativeToolTip": "SportovniKlub\\Views\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAswGAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-04T23:34:23.557Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "TreninkyWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\Views\\TreninkyWindow.xaml",
-              "RelativeDocumentMoniker": "SportovniKlub\\Views\\TreninkyWindow.xaml",
-              "ToolTip": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\Views\\TreninkyWindow.xaml",
-              "RelativeToolTip": "SportovniKlub\\Views\\TreninkyWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-12-04T23:34:15.307Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "TreninkyWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\Views\\TreninkyWindow.xaml.cs",
-              "RelativeDocumentMoniker": "SportovniKlub\\Views\\TreninkyWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\Views\\TreninkyWindow.xaml.cs",
-              "RelativeToolTip": "SportovniKlub\\Views\\TreninkyWindow.xaml.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAnwCkAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-04T23:34:02.218Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ITreninkMapper.cs",
-              "DocumentMoniker": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\Interfaces\\ITreninkMapper.cs",
-              "RelativeDocumentMoniker": "SportovniKlub\\Interfaces\\ITreninkMapper.cs",
-              "ToolTip": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\Interfaces\\ITreninkMapper.cs",
-              "RelativeToolTip": "SportovniKlub\\Interfaces\\ITreninkMapper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T00:41:03.297Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "TreninkyService.cs",
-              "DocumentMoniker": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\Services\\TreninkyService.cs",
-              "RelativeDocumentMoniker": "SportovniKlub\\Services\\TreninkyService.cs",
-              "ToolTip": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\Services\\TreninkyService.cs",
-              "RelativeToolTip": "SportovniKlub\\Services\\TreninkyService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-04T23:33:56.436Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "TreninkMapper.cs",
-              "DocumentMoniker": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\Mappers\\TreninkMapper.cs",
-              "RelativeDocumentMoniker": "SportovniKlub\\Mappers\\TreninkMapper.cs",
-              "ToolTip": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\Mappers\\TreninkMapper.cs",
-              "RelativeToolTip": "SportovniKlub\\Mappers\\TreninkMapper.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAIwBUAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-04T23:41:58.324Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "TreninkDTO.cs",
-              "DocumentMoniker": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\ModelsDTO\\TreninkDTO.cs",
-              "RelativeDocumentMoniker": "SportovniKlub\\ModelsDTO\\TreninkDTO.cs",
-              "ToolTip": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\ModelsDTO\\TreninkDTO.cs",
-              "RelativeToolTip": "SportovniKlub\\ModelsDTO\\TreninkDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T01:04:33.239Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "TreninkyRepository.cs",
               "DocumentMoniker": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\Repositories\\TreninkyRepository.cs",
               "RelativeDocumentMoniker": "SportovniKlub\\Repositories\\TreninkyRepository.cs",
               "ToolTip": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\Repositories\\TreninkyRepository.cs",
               "RelativeToolTip": "SportovniKlub\\Repositories\\TreninkyRepository.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwBoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwEcAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T00:17:05.473Z",
+              "WhenOpened": "2025-12-08T17:46:24.878Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\Views\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "SportovniKlub\\Views\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\Views\\MainWindow.xaml",
-              "RelativeToolTip": "SportovniKlub\\Views\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-12-05T00:39:43.205Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 7,
               "Title": "App.xaml.cs",
               "DocumentMoniker": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\App.xaml.cs",
               "RelativeDocumentMoniker": "SportovniKlub\\App.xaml.cs",
               "ToolTip": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\App.xaml.cs",
               "RelativeToolTip": "SportovniKlub\\App.xaml.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAUwCcAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAmwDgAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-04T23:47:39.436Z",
+              "WhenOpened": "2025-12-08T23:23:35.078Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\ViewModels\\MainViewModel.cs",
+              "RelativeDocumentMoniker": "SportovniKlub\\ViewModels\\MainViewModel.cs",
+              "ToolTip": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\ViewModels\\MainViewModel.cs",
+              "RelativeToolTip": "SportovniKlub\\ViewModels\\MainViewModel.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAIwBYAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T23:10:55.248Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "NavigationService.cs",
+              "DocumentMoniker": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\NavigationService.cs",
+              "RelativeDocumentMoniker": "SportovniKlub\\NavigationService.cs",
+              "ToolTip": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\NavigationService.cs",
+              "RelativeToolTip": "SportovniKlub\\NavigationService.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwC4AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T23:10:04.511Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "RelayCommand.cs",
+              "DocumentMoniker": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\RelayCommand.cs",
+              "RelativeDocumentMoniker": "SportovniKlub\\RelayCommand.cs",
+              "ToolTip": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\RelayCommand.cs",
+              "RelativeToolTip": "SportovniKlub\\RelayCommand.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAoAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T23:12:47.171Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IUnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\Interfaces\\IUnitOfWork.cs",
+              "RelativeDocumentMoniker": "SportovniKlub\\Interfaces\\IUnitOfWork.cs",
+              "ToolTip": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\Interfaces\\IUnitOfWork.cs",
+              "RelativeToolTip": "SportovniKlub\\Interfaces\\IUnitOfWork.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T18:18:50.828Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OracleUnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\OracleUnitOfWork.cs",
+              "RelativeDocumentMoniker": "SportovniKlub\\OracleUnitOfWork.cs",
+              "ToolTip": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\OracleUnitOfWork.cs",
+              "RelativeToolTip": "SportovniKlub\\OracleUnitOfWork.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAcwEsAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T18:05:40.191Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AddTreninkViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\ViewModels\\AddTreninkViewModel.cs",
+              "RelativeDocumentMoniker": "SportovniKlub\\ViewModels\\AddTreninkViewModel.cs",
+              "ToolTip": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\ViewModels\\AddTreninkViewModel.cs",
+              "RelativeToolTip": "SportovniKlub\\ViewModels\\AddTreninkViewModel.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAD4v0MAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T17:52:33.393Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TreninkyViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\ViewModels\\TreninkyViewModel.cs",
+              "RelativeDocumentMoniker": "SportovniKlub\\ViewModels\\TreninkyViewModel.cs",
+              "ToolTip": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\ViewModels\\TreninkyViewModel.cs",
+              "RelativeToolTip": "SportovniKlub\\ViewModels\\TreninkyViewModel.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAADwvzsAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T17:46:30.81Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "TreninkMapper.cs",
+              "DocumentMoniker": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\Mappers\\TreninkMapper.cs",
+              "RelativeDocumentMoniker": "SportovniKlub\\Mappers\\TreninkMapper.cs",
+              "ToolTip": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\Mappers\\TreninkMapper.cs",
+              "RelativeToolTip": "SportovniKlub\\Mappers\\TreninkMapper.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAewB4AAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T17:46:15.937Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "TreninkDTO.cs",
+              "DocumentMoniker": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\ModelsDTO\\TreninkDTO.cs",
+              "RelativeDocumentMoniker": "SportovniKlub\\ModelsDTO\\TreninkDTO.cs",
+              "ToolTip": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\ModelsDTO\\TreninkDTO.cs",
+              "RelativeToolTip": "SportovniKlub\\ModelsDTO\\TreninkDTO.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAuwAgAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T17:46:22.35Z"
             },
             {
               "$type": "Document",
@@ -240,48 +279,9 @@
               "RelativeDocumentMoniker": "SportovniKlub\\Models\\Trenink.cs",
               "ToolTip": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\Models\\Trenink.cs",
               "RelativeToolTip": "SportovniKlub\\Models\\Trenink.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABpAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAA8wCcAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T00:45:18.111Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "OracleUnitOfWork.cs",
-              "DocumentMoniker": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\OracleUnitOfWork.cs",
-              "RelativeDocumentMoniker": "SportovniKlub\\OracleUnitOfWork.cs",
-              "ToolTip": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\OracleUnitOfWork.cs",
-              "RelativeToolTip": "SportovniKlub\\OracleUnitOfWork.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABQAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T00:19:04.873Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "SportovniDisciplinyRepository.cs",
-              "DocumentMoniker": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\Repositories\\SportovniDisciplinyRepository.cs",
-              "RelativeDocumentMoniker": "SportovniKlub\\Repositories\\SportovniDisciplinyRepository.cs",
-              "ToolTip": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\Repositories\\SportovniDisciplinyRepository.cs",
-              "RelativeToolTip": "SportovniKlub\\Repositories\\SportovniDisciplinyRepository.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAA0wC4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-04T23:40:20.29Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TreninkyViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\ViewModels\\TreninkyViewModel.cs",
-              "RelativeDocumentMoniker": "SportovniKlub\\ViewModels\\TreninkyViewModel.cs",
-              "ToolTip": "C:\\Users\\lori8\\source\\repos\\SportovniKlub\\SportovniKlub\\ViewModels\\TreninkyViewModel.cs",
-              "RelativeToolTip": "SportovniKlub\\ViewModels\\TreninkyViewModel.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwBYAAABCAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-04T23:33:58.267Z",
+              "WhenOpened": "2025-12-08T17:46:20.7Z",
               "EditorCaption": ""
             }
           ]

@@ -1,5 +1,6 @@
 ﻿using SportovniKlub.Interfaces;
 using SportovniKlub.Models;
+using SportovniKlub.ModelsDTO;
 using SportovniKlub.Services;
 using System;
 using System.Collections.Generic;
@@ -11,9 +12,9 @@ using System.Threading.Tasks;
 
 namespace SportovniKlub.ViewModels
 {
-    internal class TymyViewModel : INotifyPropertyChanged
+    public class TymyViewModel : INotifyPropertyChanged
     {
-        public ObservableCollection<Tym> Tymy { get; set; }
+        public ObservableCollection<TymDTO> Tymy { get; set; }
         public ITymyService TymyService { get; set; }
         public RelayCommand AddTymCommand { get; set; }
         public RelayCommand DeleteTymCommand { get; set; }
@@ -21,7 +22,7 @@ namespace SportovniKlub.ViewModels
         public TymyViewModel(ITymyService tymyService)
         {
             TymyService = tymyService;
-            Tymy = new ObservableCollection<Tym>();
+            Tymy = new ObservableCollection<TymDTO>();
 
             AddTymCommand = new RelayCommand(tym =>
             {

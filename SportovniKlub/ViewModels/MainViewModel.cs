@@ -11,20 +11,24 @@ using System.Windows.Input;
 
 namespace SportovniKlub.ViewModels
 {
-    internal class MainViewModel : INotifyPropertyChanged
+    public class MainViewModel : INotifyPropertyChanged
     {
-        private OracleDatabase db;
+        private readonly INavigationService _navigationService;
+        public RelayCommand OpenTreninkyCommand { get; }
 
-        public MainViewModel(OracleDatabase db)
+        public MainViewModel(INavigationService navigationService)
         {
-            this.db = db;
+            _navigationService = navigationService;
+
+            OpenTreninkyCommand = new RelayCommand(treninky =>
+            {
+                OpenTreninky();
+            });
         }
 
-        public TymyViewModel TymyVM { get; }
-
-        public MainViewModel()
+        private void OpenTreninky()
         {
-
+            _navigationService.ShowTreninkyWindow();    
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;

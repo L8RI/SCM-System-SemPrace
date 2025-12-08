@@ -1,4 +1,5 @@
 ﻿using SportovniKlub.Models;
+using SportovniKlub.ModelsDTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace SportovniKlub.Interfaces
 {
     public interface ITymyService
     {
-        List<Tym> GetAllTymy();
+        List<TymDTO> GetAllTymy();
 
         public void AddTym(Tym tym);
 

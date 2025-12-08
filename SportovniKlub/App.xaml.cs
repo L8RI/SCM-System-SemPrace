@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using SportovniKlub.Converters;
 using SportovniKlub.Interfaces;
+using SportovniKlub.Mappers;
 using SportovniKlub.Models;
+using SportovniKlub.Repositories;
 using SportovniKlub.Services;
-using SportovniKlub.TablesHandlers;
 using SportovniKlub.ViewModels;
 using System.Configuration;
 using System.Data;
@@ -21,42 +21,51 @@ namespace SportovniKlub
 
         public static IServiceProvider ServiceProvider { get; private set; }   
 
-        //public ITymyService TymyService { get; private set; }
-        //public ITreninkyService TreninkyService { get; private set; }
-        //public IOsobyService OsobyService { get; private set; }
-
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
 
-            //var db = new OracleDatabase(); 
-
-            //TymyService = new TymyService(connectionString);
-            //TreninkyService = new TreninkyService(connectionString);  
-            //OsobyService = new OsobyService(db);
-
             var services = new ServiceCollection();
 
-            services.AddTransient<IUnitOfWork>(p => new OracleUnitOfWork(connectionString));
+            services.AddScoped<IUnitOfWork>(p => new OracleUnitOfWork(connectionString));
 
             //Repositories:
-            services.AddTransient<TreninkyRepository>();
+            services.AddScoped<TreninkyRepository>();
+            services.AddScoped<TymyRepository>();
+            services.AddScoped<SportovniDisciplinyRepository>();
+            services.AddScoped<SponzoriRepository>();
+            services.AddScoped<TreneriRepository>();
+            services.AddScoped<OsobyRepository>();
+            services.AddScoped<TypyTreninkuRepository>();
 
             //Services:
+            services.AddScoped<INavigationService, NavigationService>();
+            services.AddScoped<IMessageService, MessageService>();
             services.AddScoped<ITreninkyService, TreninkyService>();
             services.AddScoped<ITymyService, TymyService>();
+            services.AddScoped<ITreneriService, TreneriService>();
             services.AddScoped<ISportovniDisciplinaService, DisciplinaService>();
+            services.AddScoped<IOsobyService, OsobyService>();
+            services.AddScoped<ITypyTreninkuService, TypyTreninkuService>();
+
 
             //ViewModels:
             services.AddTransient<TreninkyViewModel>();
             services.AddTransient<TymyViewModel>();
+            services.AddTransient<OsobyViewModel>();
+            services.AddTransient<AddTreninkViewModel>();
+            services.AddTransient<MainViewModel>();
 
             //Views:
             services.AddTransient<TymyWindow>();
             services.AddTransient<TreninkyWindow>();
+            services.AddTransient<OsobyWindow>();
+            services.AddTransient<AddTreninkWindow>();
 
             //Mappers:
             services.AddScoped<ITreninkMapper, TreninkMapper>();
+            services.AddScoped<ITymyMapper, TymyMapper>();
+            services.AddScoped<IOsobyMapper, OsobyMapper>();
 
             ServiceProvider = services.BuildServiceProvider();
         }

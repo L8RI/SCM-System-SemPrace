@@ -15,7 +15,7 @@ namespace SportovniKlub
 
         public IDbConnection Connection { get; }
 
-        public IDbTransaction Transaction { get; }
+        public IDbTransaction Transaction { get; private set;  }
 
         public OracleUnitOfWork(string connectionString)
         {
@@ -23,29 +23,38 @@ namespace SportovniKlub
             
             Connection = new OracleConnection(connectionString);
             Connection.Open();
-            Transaction = Connection.BeginTransaction();
+            //Transaction = Connection.BeginTransaction();
+        }
+
+        public void BeginTransaction()
+        {
+            if (Transaction == null)
+            {
+                Transaction = Connection.BeginTransaction();
+            }
         }
 
         public void Commit()
         {
-            Transaction?.Commit();
-            Dispose();
-        }
+            if (Transaction == null) return;
 
-        public void Dispose()
-        {
-            Transaction.Dispose();
-            Connection.Dispose();
+            Transaction?.Commit();
+            Transaction?.Dispose();
+            Transaction = null;
         }
 
         public void Rollback()
         {
+            if (Transaction == null) return;
+
             Transaction?.Rollback();
-            Dispose();
+            Transaction?.Dispose();
+            Transaction = null;
         }
 
         public TResult Execute<TResult>(Func<TResult> func)
         {
+            BeginTransaction();
             try
             {
                 var result = func();
@@ -60,6 +69,7 @@ namespace SportovniKlub
 
         public void Execute(Action action)
         {
+            BeginTransaction();
             try
             {
                 action();
@@ -69,6 +79,13 @@ namespace SportovniKlub
                 Rollback();
                 throw;
             }
+        }
+
+        public void Dispose()
+        {
+            Transaction?.Dispose();
+            Transaction = null;
+            Connection?.Dispose();
         }
     }
 }

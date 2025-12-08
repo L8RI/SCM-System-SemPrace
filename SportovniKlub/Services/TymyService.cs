@@ -1,6 +1,7 @@
 ﻿using SportovniKlub.Interfaces;
 using SportovniKlub.Models;
-using SportovniKlub.TablesHandlers;
+using SportovniKlub.ModelsDTO;
+using SportovniKlub.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,62 +12,79 @@ namespace SportovniKlub.Services
 {
     public class TymyService : ITymyService
     {
-        private readonly string _connectionString;
+        private readonly IUnitOfWork _uow;
+        private readonly TymyRepository _repo;
+        private readonly SportovniDisciplinyRepository _sportovniDisciplinyRepository;
+        private readonly TreneriRepository _treneriRepo;
+        private readonly SponzoriRepository _sponzoriRepo;
+        private readonly ITymyMapper _tymyMapper;
 
-        public TymyService(string connectionString)
+        public TymyService(IUnitOfWork uow, TymyRepository repo, TreneriRepository treneriRepo,
+            SponzoriRepository sponzoriRepo, SportovniDisciplinyRepository sportovniDiscipliny,
+            ITymyMapper mapper)
         {
-            _connectionString = connectionString;
+            _uow = uow;
+            _repo = repo;
+            _treneriRepo = treneriRepo;
+            _sponzoriRepo = sponzoriRepo;
+            _sportovniDisciplinyRepository = sportovniDiscipliny;
+            _tymyMapper = mapper;
         }
 
-        public List<Tym> GetAllTymy()
+        public List<TymDTO> GetAllTymy()
         {
-            using var uow = new OracleUnitOfWork(_connectionString);
-            var repo = new TymyRepository(uow);
+            return _uow.Execute(() =>
+            {
+                var tymy = _repo.ShowTymy();
+                var discipliny = _sportovniDisciplinyRepository.GetAllDiscipline();
+                var treneri = _treneriRepo.GetAllTreneri();
+                var sponzori = _sponzoriRepo.GetAllSponzori();
 
-            try
-            {
-                var data = repo.ShowTymy();
-                uow.Commit();
-                return data;
-            } catch
-            {
-                uow.Rollback();
-                throw;
-            }
+                foreach (var tym in tymy)
+                {
+                    tym.SportovniDisciplina = discipliny.FirstOrDefault(d => d.SportovniDisciplinaId == tym.SportovniDisciplinaId);
+                    tym.Sponzor = sponzori.FirstOrDefault(s => s.SponzorId == tym.SponzorId);
+                    tym.Trener = treneri.FirstOrDefault(t => t.TrenerId == tym.TrenerId);
+                }
+
+                return tymy.Select(t => _tymyMapper.ToDTO(t)).ToList();
+            });
         }
 
         public void AddTym(Tym tym)
         {
-            using var uow = new OracleUnitOfWork(_connectionString);
-            var repo = new TymyRepository(uow);
+            //using var uow = new OracleUnitOfWork(_connectionString);
+            //var repo = new TymyRepository(uow);
 
-            try
-            {
-                repo.AddTym(tym);
-                uow.Commit(); 
-            }
-            catch
-            {
-                uow.Rollback();
-                throw;
-            }
+            //try
+            //{
+            //    repo.AddTym(tym);
+            //    uow.Commit(); 
+            //}
+            //catch
+            //{
+            //    uow.Rollback();
+            //    throw;
+            //}
+            throw new NotImplementedException();
         }
 
         public void DeleteTym(Tym tym)
         {
-            using var uow = new OracleUnitOfWork(_connectionString);
-            var repo = new TymyRepository(uow);
+            //using var uow = new OracleUnitOfWork(_connectionString);
+            //var repo = new TymyRepository(uow);
 
-            try
-            {
-                repo.DeleteTym(tym);
-                uow.Commit();
-            }
-            catch
-            {
-                uow.Rollback();
-                throw;
-            }
+            //try
+            //{
+            //    repo.DeleteTym(tym);
+            //    uow.Commit();
+            //}
+            //catch
+            //{
+            //    uow.Rollback();
+            //    throw;
+            //}
+            throw new NotImplementedException();
         }
     }
 }

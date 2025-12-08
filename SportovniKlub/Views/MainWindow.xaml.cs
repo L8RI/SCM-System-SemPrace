@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Oracle.ManagedDataAccess.Client;
 using SportovniKlub.ViewModels;
-using SportovniKlub.Views;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -25,6 +24,7 @@ namespace SportovniKlub
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = App.ServiceProvider.GetRequiredService<MainViewModel>();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -65,28 +65,41 @@ namespace SportovniKlub
 
         private void Show_Treninky_Button_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                var serviceProvider = App.ServiceProvider;
-                var window = serviceProvider.GetRequiredService<TreninkyWindow>();
-                window.Show();
-            }
-            catch (OracleException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //try
+            //{
+            //    var serviceProvider = App.ServiceProvider;
+            //    var window = serviceProvider.GetRequiredService<TreninkyWindow>();
+            //    window.Show();
+            //}
+            //catch (OracleException ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //    Clipboard.SetText(ex.StackTrace);
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //    Clipboard.SetText(ex.StackTrace);
+            //}
         }
 
         private void Show_Tymy_Button_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                var window = new TymyWindow();
+                var serviceProvider = App.ServiceProvider;
+                var window = serviceProvider.GetRequiredService<TymyWindow>();
                 window.Show();
             }
             catch (OracleException ex)
             {
                 MessageBox.Show(ex.Message);
+                Clipboard.SetText(ex.StackTrace);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Clipboard.SetText(ex.StackTrace);
             }
         }
 
@@ -99,12 +112,19 @@ namespace SportovniKlub
         {
             try
             {
-                var window = new OsobyWindow();
+                var serviceProvider = App.ServiceProvider;
+                var window = serviceProvider.GetRequiredService<OsobyWindow>();
                 window.Show();
             }
             catch (OracleException ex)
             {
                 MessageBox.Show(ex.Message);
+                Clipboard.SetText(ex.StackTrace);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Clipboard.SetText(ex.StackTrace);
             }
         }
     }

@@ -1,5 +1,6 @@
 ﻿using SportovniKlub.Interfaces;
 using SportovniKlub.Models;
+using SportovniKlub.ModelsDTO;
 using SportovniKlub.Repositories;
 using System;
 using System.Collections.Generic;
@@ -11,20 +12,36 @@ namespace SportovniKlub.Services
 {
     public class DisciplinaService : ISportovniDisciplinaService
     {
-        private readonly string _connectionString;
+        private readonly IUnitOfWork _uow;
+        private readonly SportovniDisciplinyRepository _repo;
         
-        public DisciplinaService(string connectionString) 
+        public DisciplinaService(IUnitOfWork uow, SportovniDisciplinyRepository repo) 
         {
-            _connectionString = connectionString; 
+            _repo = repo;
+            _uow = uow;
+        }
+
+        public List<SportovniDisciplina> GetAllDiscipliny()
+        {
+            return _uow.Execute(() =>
+            {
+                var sportovniDiscipliny = _repo.GetAllDiscipline();
+                return sportovniDiscipliny;
+            });
         }
 
         public SportovniDisciplina GetById(int disciplinaId)
         {
-            using var uow = new OracleUnitOfWork(_connectionString);
-            var repo = new SportovniDisciplinyRepository(uow);
+            return _uow.Execute(() =>
+            {
+                var sportovniDisciplina = _repo.GetById(disciplinaId);
+                return sportovniDisciplina;
+            });
+        }
 
-            var sportovniDisciplina = repo.GetById(disciplinaId);
-            return sportovniDisciplina;
+        public SportovniDisciplina GetByName(string name)
+        {
+            throw new NotImplementedException();
         }
     }
 }

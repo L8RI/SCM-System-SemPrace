@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 using Oracle.ManagedDataAccess.Client;
 using SportovniKlub.Interfaces;
 using SportovniKlub.Models;
-using SportovniKlub.TablesHandlers;
 
 namespace SportovniKlub
 {

@@ -31,21 +31,31 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBlock Text="ID Trenéra:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Margin="0,5"/>
-                <TextBox x:Name="TrenerIDTextBox" Grid.Row="0" Grid.Column="1" Margin="0,5" Padding="5" FontSize="14"/>
+                <TextBlock Text="Trenér:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Margin="0,5"/>
+                <ComboBox Grid.Row="0" Grid.Column="1" Margin="0,5" FontSize="14"
+                  ItemsSource="{Binding Treneri}" 
+                  DisplayMemberPath="Prijmeni" 
+                  SelectedItem="{Binding VybranyTrener}" />
 
                 <TextBlock Text="Datum:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="0,5"/>
                 <DatePicker x:Name="DatumPicker" Grid.Row="1" Grid.Column="1" Margin="0,5" FontSize="14"/>
 
-                <TextBlock Text="Sportovní disciplína ID:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Margin="0,5"/>
-                <TextBox x:Name="SportDisciplinaIDTextBox" Grid.Row="2" Grid.Column="1" Margin="0,5" Padding="5" FontSize="14"/>
+                <TextBlock Text="Sportovní disciplína:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Margin="0,5"/>
+                <ComboBox Grid.Row="2" Grid.Column="1" Margin="0,5" FontSize="14"
+                  ItemsSource="{Binding SportovniDiscipliny}" 
+                  DisplayMemberPath="Nazev" 
+                  SelectedItem="{Binding VybranaDisciplina}" />
 
-                <TextBlock Text="Typ tréninku ID:" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Margin="0,5"/>
-                <TextBox x:Name="TypTreninkuIDTextBox" Grid.Row="3" Grid.Column="1" Margin="0,5" Padding="5" FontSize="14"/>
+                <TextBlock Text="Typ tréninku:" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Margin="0,5"/>
+                <ComboBox Grid.Row="3" Grid.Column="1" Margin="0,5" FontSize="14"
+                  ItemsSource="{Binding TypyTreninku}" 
+                  DisplayMemberPath="Nazev" 
+                  SelectedItem="{Binding VybranyTypTreninku}" />
             </Grid>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
                 <Button x:Name="SaveButton"
+                        Command="{Binding SaveCommand}"
                         Content="💾  Uložit"
                         Width="140" Height="45"
                         FontSize="14"
@@ -54,8 +64,7 @@
                         Background="#FF00C853"
                         BorderThickness="0"
                         Cursor="Hand"
-                        Margin="5,0"
-                        Click="SaveButton_Click">
+                        Margin="5,0">
                     <Button.Effect>
                         <DropShadowEffect Color="Black" Opacity="0.25" BlurRadius="8"/>
                     </Button.Effect>
@@ -84,6 +93,7 @@
                 </Button>
 
                 <Button x:Name="CancelButton"
+                        Command="{Binding CloseWindowCommand}"
                         Content="✖️  Zrušit"
                         Width="140" Height="45"
                         FontSize="14"
@@ -92,8 +102,7 @@
                         Background="#FFE0E0E0"
                         BorderThickness="0"
                         Cursor="Hand"
-                        Margin="5,0"
-                        Click="CancelButton_Click">
+                        Margin="5,0">
                     <Button.Effect>
                         <DropShadowEffect Color="Black" Opacity="0.15" BlurRadius="6"/>
                     </Button.Effect>

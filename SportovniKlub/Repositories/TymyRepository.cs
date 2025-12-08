@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SportovniKlub.TablesHandlers
+namespace SportovniKlub.Repositories
     {
-        internal class TymyRepository
+        public class TymyRepository
         {
             private readonly IUnitOfWork _uow;
 
@@ -18,38 +18,49 @@ namespace SportovniKlub.TablesHandlers
                     _uow = uow;
                 }
 
-            public List<Tym> ShowTymy()
+        public List<Tym> ShowTymy()
+        {
+            var tymy = new List<Tym>();
+
+            using var command = _uow.Connection.CreateCommand();
+            command.Transaction = _uow.Transaction;
+            command.CommandText = "SELECT * FROM TYMY";
+
+            using var reader = command.ExecuteReader();
+
+            while (reader.Read())
             {
-                var tymy = new List<Tym>();
+                int tymId = reader.GetInt32(reader.GetOrdinal("TYM_ID"));
+                string nazevTymu = reader.GetString(reader.GetOrdinal("NAZEV_TYMU"));
+                int pocetHracu = reader.GetInt32(reader.GetOrdinal("POCET_HRACU"));
+                decimal plat = reader.GetDecimal(reader.GetOrdinal("PLAT"));
+                int pocetTrofeju = reader.GetInt32(reader.GetOrdinal("POCET_TROFEJU"));
+                decimal vyseOdmen = reader.GetDecimal(reader.GetOrdinal("VYSE_ODMEN"));
+                int sportovniDisciplinaId = reader.GetInt32(reader.GetOrdinal("SPORTOVNI_DISCIPLINA_ID"));
+                int sponzorOrdinal = reader.GetOrdinal("SPONZOR_ID");
+                int? sponzorId = reader.IsDBNull(sponzorOrdinal) ? null : reader.GetInt32(sponzorOrdinal);
 
-                using var command = _uow.Connection.CreateCommand();
-                command.Transaction = _uow.Transaction;
-                command.CommandText = "SELECT * FROM TYMY";
+                int trenerId = reader.GetInt32(reader.GetOrdinal("TRENER_ID"));
 
-                using var reader = command.ExecuteReader();
-                while (reader.Read())
-                {
-                    int? sponzorId = reader.IsDBNull(7) ? null : reader.GetInt32(7);
-
-                    var tym = new Tym(
-                    reader.GetInt32(0),
-                    reader.GetString(1),
-                    reader.GetInt32(2),
-                    reader.GetDecimal(3),
-                    reader.GetInt32(4),
-                    reader.GetDecimal(5),
-                    reader.GetInt32(6),
+                var tym = new Tym(
+                    tymId,
+                    nazevTymu,
+                    pocetHracu,
+                    plat,
+                    pocetTrofeju,
+                    vyseOdmen,
+                    sportovniDisciplinaId,
                     sponzorId,
-                    reader.GetInt32(8)
-                    );
+                    trenerId
+                );
 
-                    tymy.Add(tym);
-                }
-
-                return tymy;
+                tymy.Add(tym);
             }
 
-            public void AddTym(Tym tym)
+            return tymy;
+        }
+
+        public void AddTym(Tym tym)
             {
                 var command = _uow.Connection.CreateCommand();
                 command.Connection = _uow.Connection;
@@ -64,14 +75,14 @@ namespace SportovniKlub.TablesHandlers
                 command.Parameters.Add(new OracleParameter("plat", tym.Plat));
                 command.Parameters.Add(new OracleParameter("pocetTrofeju", tym.PocetTrofeju));
                 command.Parameters.Add(new OracleParameter("vyseOdmen", tym.VyseOdmen));
-                command.Parameters.Add(new OracleParameter("sportovniDisciplinaID", tym.SportovniDisciplinaID));
+                command.Parameters.Add(new OracleParameter("sportovniDisciplinaID", tym.SportovniDisciplina.SportovniDisciplinaId));
 
-                if (tym.SponzorID.HasValue)
-                    command.Parameters.Add(new OracleParameter("sponzorID", tym.SponzorID.Value));
+                if (!tym.Sponzor.SponzorId.Equals(null))
+                    command.Parameters.Add(new OracleParameter("sponzorID", tym.Sponzor.SponzorId));
                 else
                     command.Parameters.Add(new OracleParameter("sponzorID", DBNull.Value));
 
-                command.Parameters.Add(new OracleParameter("trenerID", tym.TrenerID));
+                command.Parameters.Add(new OracleParameter("trenerID", tym.Trener.OsobaId));
 
                 command.ExecuteNonQuery();
             }

@@ -1,4 +1,5 @@
 ﻿using SportovniKlub.Models;
+using SportovniKlub.ModelsDTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,8 @@ namespace SportovniKlub.Interfaces
 {
     public interface ISportovniDisciplinaService
     {
+        List<SportovniDisciplina> GetAllDiscipliny();
         SportovniDisciplina GetById(int disciplinaId);
+        SportovniDisciplina GetByName(string name);
     }
 }

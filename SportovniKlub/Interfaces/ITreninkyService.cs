@@ -1,4 +1,5 @@
 ﻿using SportovniKlub.Models;
+using SportovniKlub.ModelsDTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace SportovniKlub.Interfaces
 {
     public interface ITreninkyService
     {
-        List<Trenink> GetAllTreninky();
+        List<TreninkDTO> GetAllTreninky();
 
         public void AddTrenink(Trenink trenink);
 

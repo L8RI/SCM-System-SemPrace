@@ -1,54 +1,73 @@
-﻿using SportovniKlub.ViewModels;
+﻿using SportovniKlub.Models;
+using SportovniKlub.ModelsDTO;
+using SportovniKlub.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
-namespace SportovniKlub.Views
+namespace SportovniKlub
 {
-    /// <summary>
-    /// Interaction logic for OsobyWindow.xaml
-    /// </summary>
     public partial class OsobyWindow : Window
     {
-        private OsobyViewModels osobyViewModels;
+        private OsobyViewModel viewModel;
 
-        public OsobyWindow()
+        public OsobyWindow(OsobyViewModel vm)
         {
             InitializeComponent();
-            //var app = (App)Application.Current;
-            //osobyViewModels = new OsobyViewModels(app.OsobyService);
-
-            //DataContext = osobyViewModels;
+            viewModel = vm;
+            DataContext = viewModel;
         }
 
-        private void AddOsobaButton_Click(object sender, RoutedEventArgs e)
+        private void AddButton_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                Osoba osoba = new Osoba(
+                    osobaId: 0,
+                    jmeno: "Nové jméno",
+                    prijmeni: "Nové příjmení",
+                    datumNarozeni: DateTime.Now,
+                    mail: "novy@mail.cz",
+                    typOsoby: 'C', 
+                    sportovniDisciplinaId: 1
+                );
 
+                viewModel.AddCommand.Execute(osoba);
+            }
+            catch (Exception ex)
+            {
+                Clipboard.SetText(ex.Message);
+                MessageBox.Show(ex.Message, "Chyba při přidávání osoby");
+            }
         }
 
-        private void DeleteOsobaButton_Click(object sender, RoutedEventArgs e)
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                if (osobyGrid.SelectedItem is OsobaDTO selected)
+                {
+                    viewModel.DeleteCommand.Execute(selected);
+                }
+                else
+                {
+                    MessageBox.Show("Vyberte osobu, kterou chcete smazat.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Clipboard.SetText(ex.Message);
+                MessageBox.Show(ex.Message, "Chyba při mazání osoby");
+            }
         }
 
-        private void SaveOsobaButton_Click(object sender, RoutedEventArgs e)
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-
+            // viewModel.UpdateCommand.Execute(selectedOsoba);
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
     }
 }

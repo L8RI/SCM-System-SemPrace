@@ -1,18 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-/*
-OSOBA_ID                NOT NULL NUMBER(38)    
-JMENO                   NOT NULL VARCHAR2(50)  
-PRIJMENI                NOT NULL VARCHAR2(50)  
-DATUM_NAROZENI          NOT NULL DATE          
-MAIL                    NOT NULL VARCHAR2(100) 
-TYPOSOBY                NOT NULL CHAR(1)       
-SPORTOVNI_DISCIPLINA_ID NOT NULL NUMBER     
-*/
 
 namespace SportovniKlub.Models
 {
@@ -39,5 +25,4 @@ namespace SportovniKlub.Models
 
         public Osoba() { }
     }
-
 }
